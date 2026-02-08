@@ -1,8 +1,7 @@
-export function createSingleItem(item) {
-  const div = document.createElement("div");
-  div.className = "single-item";
+function createSingleItem(item) {
+  var $div = $('<div class="single-item"></div>');
 
-  div.innerHTML = `
+  $div.html(`
     <input type="checkbox" ${item.completed ? "checked" : ""} />
     <p style="text-decoration: ${item.completed ? "line-through" : "none"}">
       ${item.name}
@@ -13,7 +12,7 @@ export function createSingleItem(item) {
     <button class="btn icon-btn remove-btn" type="button">
       <i class="fa-regular fa-trash-can"></i>
     </button>
-  `;
+  `);
 
-  return div;
+  return $div;
 }
